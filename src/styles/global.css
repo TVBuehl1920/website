@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+  @apply font-bold py-2 px-4 rounded;
+}
+.btn-blue {
+  @apply bg-blue-500 text-white;
+}
+.btn-blue:hover {
+  @apply bg-blue-700;
+}
+
+.btn-download {
+  @apply font-bold py-2 px-4 rounded inline-flex items-center;
+}
+
+h1 {
+  @apply text-2xl;
+}
+h2 {
+  @apply mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl;
+}
+h3 {
+  @apply text-lg;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.gallerySpacing {
+  margin-bottom: 80px;
+}

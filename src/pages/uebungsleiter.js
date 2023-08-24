@@ -1,0 +1,50 @@
+import React from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/base/layout"
+import { Seo } from "../components/base/seo"
+import Container from "../components/base/Container"
+
+const UebungsleiterPage = ({ data }) => {
+  const pageData = data && data.datoCmsTrainer
+
+  return (
+    <Layout>
+      <Container prose>
+        {" "}
+        <div
+          className="mt-6 text-lg leading-8 text-gray-700 prose lg:prose-xl"
+          dangerouslySetInnerHTML={{ __html: pageData.content }}
+        />
+      </Container>
+    </Layout>
+  )
+}
+export default UebungsleiterPage
+
+export const query = graphql`
+  query PageQuery {
+    datoCmsTrainer {
+      id
+      seoSettings {
+        title
+        description
+      }
+      googleIndex
+      googleFollow
+      content
+    }
+  }
+`
+
+export const Head = data => {
+  const seoSettings = (data && data.data.datoCmsTrainer.seoSettings) || {}
+  const pageData = data && data.data.datoCmsTrainer
+  return (
+    <Seo
+      title={seoSettings?.title}
+      description={seoSettings.description}
+      googleFollow={pageData?.googleFollow}
+      googleIndex={pageData?.googleIndex}
+    />
+  )
+}
