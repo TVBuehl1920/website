@@ -25,13 +25,16 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <div className="bg-white">
-        <Hero
-          title={hero.title}
-          description={hero.description}
-          imageURL={hero.image.url}
-          buttonText={hero.buttonText}
-          buttonLink={hero.buttonLink}
-        />
+        {hero && (
+          <Hero
+            title={hero?.title}
+            description={hero?.description}
+            imageURL={hero?.image.url}
+            buttonText={hero?.buttonText}
+            buttonLink={hero?.buttonLink}
+          />
+        )}
+
         {contentSection1 && (
           <ContentSection
             title={contentSection1.title}
@@ -92,7 +95,7 @@ export default IndexPage
 
 export const Head = data => {
   const { seoSettings } = data.data.datoCmsHomepage
-  return <Seo title={seoSettings.title} description={seoSettings.description} googleFollow googleIndex/>
+  return <Seo title={seoSettings.title} description={seoSettings.description} googleFollow googleIndex />
 }
 export const query = graphql`
   query HomepageQuery {
