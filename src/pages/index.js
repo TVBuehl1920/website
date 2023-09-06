@@ -25,7 +25,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <div className="bg-white">
-        {hero && hero.image.url && (
+        {hero && hero?.image?.url && (
           <Hero
             title={hero?.title}
             description={hero?.description}
