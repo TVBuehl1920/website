@@ -25,11 +25,11 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <div className="bg-white">
-        {hero && (
+        {hero && hero.image.url && (
           <Hero
             title={hero?.title}
             description={hero?.description}
-            imageURL={hero?.image.url}
+            imageURL={hero?.image?.url}
             buttonText={hero?.buttonText}
             buttonLink={hero?.buttonLink}
           />
