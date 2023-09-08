@@ -8,7 +8,7 @@ import { GetAllSportProgram } from "../../queries/sportProgram"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 const aboutUs = [
   {
-    name: "Vorstand",
+    name: "Vorstandsteam",
     href: "/vorstand/",
   },
   {
@@ -32,53 +32,6 @@ const aboutUs = [
     href: "/kontakt/",
   },
 ]
-
-// const sportangebote = [
-//   {
-//     name: "Eltern-Kind-Turnen",
-//     href: "/sportangebote/eltern-kind-turnen/",
-//   },
-//   {
-//     name: "Kleinkinder-Turnen",
-//     href: "/sportangebote/kleinkinder-turnen/",
-//   },
-//   {
-//     name: "Junge-Turnen",
-//     href: "/",
-//   },
-//   {
-//     name: "Mädchen-Turnen 1",
-//     href: "/",
-//   },
-//   {
-//     name: "Mädchen-Turnen 2",
-//     href: "/",
-//   },
-//   {
-//     name: "Frauengymnastik",
-//     href: "/",
-//   },
-//   {
-//     name: "Fitness-Sport Männer",
-//     href: "/",
-//   },
-//   {
-//     name: "Volleyball Donnerstag",
-//     href: "/",
-//   },
-//   {
-//     name: "Volleyballgruppe „Netzrolle“",
-//     href: "/",
-//   },
-//   {
-//     name: "Seniorengruppe",
-//     href: "/",
-//   },
-//   {
-//     name: "Rückenfit / Wirbelsäulengymnastik",
-//     href: "/",
-//   },
-// ]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")

@@ -11,7 +11,7 @@ const VorstandPage = ({ data }) => {
         <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
           <div className="mx-auto max-w-2xl">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Vorstand
+              Vorstandsteam
             </h1>
             <p className="mt-4 text-lg leading-8 text-gray-600">
               We’re a dynamic group of individuals who are passionate about what
@@ -21,7 +21,7 @@ const VorstandPage = ({ data }) => {
           <ul
             className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
           >
-            {pageData?.mitglieder?.map(person => (
+            {pageData?.member?.map(person => (
               <li key={person.name}>
                 {person.image?.url ? (
                   <img
@@ -50,6 +50,11 @@ const VorstandPage = ({ data }) => {
               </li>
             ))}
           </ul>
+          {pageData?.content && (<div
+            className="mt-6 text-lg leading-8 text-gray-700 prose lg:prose-xl"
+            dangerouslySetInnerHTML={{ __html: pageData?.content }}
+          />)}
+
         </div>
       </div>
     </Layout>
@@ -71,7 +76,7 @@ export const query = graphql`
             description
           }
           content
-          mitglieder {
+          member {
             id
             name
             role

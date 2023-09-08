@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 const aboutUs = [
   {
-    name: "Vorstand",
+    name: "Vorstandsteam",
     href: "/vorstand/",
   },
   {
