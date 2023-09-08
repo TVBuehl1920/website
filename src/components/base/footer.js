@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link } from 'gatsby'
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 const aboutUs = [
   {
     name: "Vorstandsteam",
@@ -45,7 +45,7 @@ export default function Footer() {
                   <h3 className="text-sm font-semibold leading-6 text-white">
                     Über uns
                   </h3>
-                  <ul role="list" className="mt-6 space-y-4">
+                  <ul className="mt-6 space-y-4">
                     {aboutUs.map(item => (
                       <li key={item.name}>
                         <Link
@@ -63,7 +63,7 @@ export default function Footer() {
                 <h3 className="text-sm font-semibold leading-6 text-white">
                   Trainingszeiten
                 </h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <ul className="mt-6 space-y-4">
                   <li>
                     <Link
                       to={"/trainingszeiten/"}

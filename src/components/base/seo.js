@@ -1,10 +1,8 @@
 import React from "react"
-import { useSiteMetadata } from "../../hooks/use-site-metadata"
 
 export const Seo = ({
   title,
   description,
-  pathname,
   googleIndex,
   googleFollow,
   children,
@@ -20,7 +18,7 @@ export const Seo = ({
   //     description: description || defaultDescription,
   //     url: `${siteUrl}${pathname || ``}`,
   //   }
-  const siteName = "Turnverein 1920 Bühl"
+  // const siteName = "Turnverein 1920 Bühl"
 //   const ogTypeValue = ogType || "website"
   const siteTitle = title || "Turnverein 1920 Bühl"
   const metaDescription = description || "Turnverein 1920 Bühl"

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import Layout from "../components/base/layout"
 import { Seo } from "../components/base/seo"
 import Container from "../components/base/Container"
@@ -6,7 +6,8 @@ import SportangebotCard from "../components/card/sportangebotCard"
 import { GetAllSportProgram } from "../queries/sportProgram"
 
 const SportangebotePage = () => {
-  const sportProgram = useState(GetAllSportProgram())
+  // const sportProgram = useState(GetAllSportProgram())
+  const sportProgram = GetAllSportProgram()
   return (
     <Layout>
       <Container>
@@ -22,9 +23,9 @@ const SportangebotePage = () => {
             vorbei! Wir freuen uns auf dich!
           </p>
           <div className="mt-16 space-y-20 lg:mt-20 lg:space-y-20">
-            {sportProgram[0]?.map(item => (
+            {sportProgram?.map(item => (
               <SportangebotCard
-                // key={item.id}
+                key={item.title}
                 id={item.id}
                 previewImage={item.previewImage}
                 slug={item.slug}

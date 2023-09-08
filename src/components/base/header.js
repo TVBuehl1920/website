@@ -5,7 +5,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 import { ChevronDownIcon } from "@heroicons/react/20/solid"
 import { GetAllSportProgram } from "../../queries/sportProgram"
 // import Logo from "../../images/logo.jpg"
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 const aboutUs = [
   {
     name: "Vorstandsteam",

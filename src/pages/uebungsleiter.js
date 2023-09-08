@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/base/layout"
 import { Seo } from "../components/base/seo"
-import Container from "../components/base/Container"
 
 const UebungsleiterPage = ({ data }) => {
 

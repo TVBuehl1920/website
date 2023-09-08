@@ -22,7 +22,7 @@ export default function ContentSection({
                 className="mt-6 text-lg leading-8 text-gray-700"
                 dangerouslySetInnerHTML={{ __html: description }}
               />
-              <div class="col-start-1 row-start-4 mt-10 flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+              <div className="col-start-1 row-start-4 mt-10 flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                 <Button buttonType={"primary"} linkUrl={linkUrl}>
                   {linkText}
                 </Button>

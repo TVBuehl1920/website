@@ -4,7 +4,7 @@ export const GetAllSportProgram = () => {
   // fix
   const { allDatoCmsSportProgram } = useStaticQuery(graphql`
     query SportProgramQuery {
-      allDatoCmsSportProgram {
+      allDatoCmsSportProgram(sort: {position: ASC}) {
         nodes {
           id
           slug
