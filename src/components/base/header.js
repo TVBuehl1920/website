@@ -9,7 +9,7 @@ import { StaticImage } from "gatsby-plugin-image"
 const aboutUs = [
   {
     name: "Vorstandsteam",
-    href: "/vorstand/",
+    href: "/vorstandsteam/",
   },
   {
     name: "Turnrat",
