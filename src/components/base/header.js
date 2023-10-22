@@ -49,9 +49,9 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
             {/* <span className="sr-only">Turnverein Bühl</span> */}
-            <StaticImage src="../../images/logo.jpg" className="h-8 w-auto" alt="" objectFit="cover" layout="fixed"
-              width={200}
-              height={64} />
+            <StaticImage src="../../images/logo.jpg" className="h-auto w-auto" alt="" objectFit="cover" layout="fixed"
+               width={160}
+               height={54}  />
 
             {/* <img
               className="h-8 w-auto"
@@ -101,7 +101,7 @@ export default function Header() {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-xs overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-4">
                   <div
                     key={"alle sportangebote"}
@@ -163,7 +163,7 @@ export default function Header() {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-xs overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-4">
                   {aboutUs.map(item => (
                     <div
@@ -206,11 +206,10 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <Link to="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Turnverein</span>
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
-              />
+              <StaticImage src="../../images/logo.jpg" className="h-auto w-auto" alt="" objectFit="cover" layout="fixed"
+                width={160}
+                height={54} />
+
             </Link>
             <button
               type="button"
