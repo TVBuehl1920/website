@@ -6,17 +6,19 @@ export default function SportangebotCard({
   previewImage,
   slug,
   title,
-
   previewText,
 }) {
   return (
     <div key={id} className="relative isolate flex flex-col gap-8 lg:flex-row">
       <div className="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-[2/1] lg:w-64 lg:shrink-0">
-        <img
-          src={previewImage.url}
-          alt=""
-          className="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover"
-        />
+        {previewImage && (
+          <img
+            src={previewImage?.url}
+            alt=""
+            className="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover"
+          />
+        )}
+
         <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
       </div>
       <div>
