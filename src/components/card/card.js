@@ -16,7 +16,7 @@ export default function Card({ id, previewImage, slug, title, previewText }) {
       <div className="max-w-xl">
         <div className="group relative">
           <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-            <Link to={`${slug}/`}>
+            <Link to={`sportangebote/${slug}/`}>
               <span className="absolute inset-0" />
               {title}
             </Link>

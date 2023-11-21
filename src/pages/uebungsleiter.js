@@ -26,10 +26,17 @@ const UebungsleiterPage = ({ data }) => {
             {memberList?.map(person => (
               <li key={person.name}>
                 {person.image?.url ? (
+                  // <img
+                  //   className="object-cover	mx-auto h-56 w-56 rounded-full"
+                  //   src={person.image.url}
+                  //   alt=""
+                  // />
                   <img
-                    className="mx-auto h-56 w-56 rounded-full"
+                    className="object-cover mx-auto h-56 w-48 rounded-[42px]"
                     src={person.image.url}
-                    alt=""
+                    alt={person.name}
+                    width={192}
+                    height={224}
                   />
                 ) : null}
                 {person.name ? (
@@ -53,10 +60,10 @@ const UebungsleiterPage = ({ data }) => {
             ))}
           </ul>
           {pageData?.content && (
-          <div
-            className="mt-6 text-lg leading-8 text-gray-700 prose lg:prose-xl"
-            dangerouslySetInnerHTML={{ __html: pageData?.content }}
-          />)}
+            <div
+              className="mt-6 text-lg leading-8 text-gray-700 prose lg:prose-xl"
+              dangerouslySetInnerHTML={{ __html: pageData?.content }}
+            />)}
         </div>
       </div>
     </Layout>

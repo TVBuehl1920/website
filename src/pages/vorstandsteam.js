@@ -7,7 +7,7 @@ const VorstandPage = ({ data }) => {
   const pageData = data && data.allDatoCmsVorstand.edges[0].node
   return (
     <Layout>
-      <div className=" py-32">
+      <div className="py-8 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
           <div className="mx-auto max-w-2xl">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -25,9 +25,11 @@ const VorstandPage = ({ data }) => {
               <li key={person.name}>
                 {person.image?.url ? (
                   <img
-                    className="mx-auto h-56 w-56 rounded-full"
+                    className="object-cover mx-auto h-56 w-48 rounded-[42px]"
                     src={person.image.url}
-                    alt=""
+                    alt={person.name}
+                    width={192}
+                    height={224}
                   />
                 ) : null}
                 {person.name ? (
