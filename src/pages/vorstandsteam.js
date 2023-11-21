@@ -2,6 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/base/layout"
 import { Seo } from "../components/base/seo"
+import LazyImage from "../components/base/LazyImage"
 
 const VorstandPage = ({ data }) => {
   const pageData = data && data.allDatoCmsVorstand.edges[0].node
@@ -24,13 +25,22 @@ const VorstandPage = ({ data }) => {
             {pageData?.member?.map(person => (
               <li key={person.name}>
                 {person.image?.url ? (
-                  <img
-                    className="object-cover mx-auto h-56 w-48 rounded-[42px]"
+
+                  <LazyImage
+                    classNames="object-cover mx-auto h-56 w-48 rounded-[42px]"
+                    aspectRatio={224/192}
                     src={person.image.url}
                     alt={person.name}
                     width={192}
                     height={224}
                   />
+                  // <img
+                  //   className="object-cover mx-auto h-56 w-48 rounded-[42px]"
+                  //   src={person.image.url}
+                  //   alt={person.name}
+                  //   width={192}
+                  //   height={224}
+                  // />
                 ) : null}
                 {person.name ? (
                   <h3 className="mt-6 text-lg font-semibold leading-7 tracking-tight text-gray-900">

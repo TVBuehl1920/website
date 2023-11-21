@@ -30,9 +30,9 @@ export default function Footer() {
             <div className="md:grid md:grid-cols-3 md:gap-8">
               <div className="mt-10 md:mt-0">
                 <div>
-                  <h3 className="text-sm font-semibold leading-6 text-white">
+                  <p className="text-sm font-semibold leading-6 text-white">
                     Über uns
-                  </h3>
+                  </p>
                   <ul className="mt-6 space-y-4">
                     {aboutUs.map(item => (
                       <li key={item.name}>
@@ -48,9 +48,9 @@ export default function Footer() {
                 </div>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-white">
+                <p className="text-sm font-semibold leading-6 text-white">
                   Trainingszeiten
-                </h3>
+                </p>
                 <ul className="mt-6 space-y-4">
                   <li>
                     <Link
@@ -64,9 +64,9 @@ export default function Footer() {
               </div>
 
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-white">
+                <p className="text-sm font-semibold leading-6 text-white">
                   Turnverein 1920 Bühl e.V.
-                </h3>
+                </p>
                 <ul role="list" className="mt-6 space-y-4">
                   <li>
                     <Link

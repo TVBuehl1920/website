@@ -9,12 +9,12 @@ export default function SportContentSection(props) {
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                {props.title}
+                {props?.title}
               </h1>
 
               <div
                 className="mt-6 text-lg leading-8 text-gray-700"
-                dangerouslySetInnerHTML={{ __html: props.description }}
+                dangerouslySetInnerHTML={{ __html: props?.description }}
               />
 
               <div className="mt-8">
@@ -27,9 +27,12 @@ export default function SportContentSection(props) {
         </div>
         <div className="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
           {props.imageURL && (<img
-            className="w-[34rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[39rem]"
-            src={props?.imageURL}
-            alt=""
+            className="lazyload w-[34rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[39rem]"
+            src={props.imageURL}
+            width={624}
+            alt={props?.title ? props?.title : "Turnverein Bühl 1920"}
+            loading={'lazy'}
+            decode="async"
           />)}
         </div>
       </div>

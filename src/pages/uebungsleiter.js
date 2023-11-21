@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/base/layout"
+import LazyImage from "../components/base/LazyImage"
 import { Seo } from "../components/base/seo"
 
 const UebungsleiterPage = ({ data }) => {
@@ -9,7 +10,7 @@ const UebungsleiterPage = ({ data }) => {
   const memberList = pageData?.member
   return (
     <Layout>
-      <div className=" py-32">
+      <div className="py-8 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
           <div className="mx-auto max-w-2xl">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -26,18 +27,16 @@ const UebungsleiterPage = ({ data }) => {
             {memberList?.map(person => (
               <li key={person.name}>
                 {person.image?.url ? (
-                  // <img
-                  //   className="object-cover	mx-auto h-56 w-56 rounded-full"
-                  //   src={person.image.url}
-                  //   alt=""
-                  // />
-                  <img
-                    className="object-cover mx-auto h-56 w-48 rounded-[42px]"
+
+                  <LazyImage
+                    classNames="object-cover mx-auto h-56 w-48 rounded-[42px]"
+                    aspectRatio={7 / 6}
                     src={person.image.url}
                     alt={person.name}
                     width={192}
                     height={224}
                   />
+
                 ) : null}
                 {person.name ? (
                   <h3 className="mt-6 text-lg font-semibold leading-7 tracking-tight text-gray-900">

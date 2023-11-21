@@ -37,7 +37,10 @@ export default function ContentSection({
           <img
             className="w-[34rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[39rem]"
             src={imageURL}
-            alt=""
+            width={624}
+            alt={title ? title : "Turnverein Bühl 1920"}
+            loading={'lazy'}
+            decode="async"
           />
         </div>
       </div>
