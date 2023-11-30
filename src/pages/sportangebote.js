@@ -11,7 +11,8 @@ const SportangebotePage = () => {
   return (
     <Layout>
       <Container>
-        <div className="mx-auto max-w-2xl lg:max-w-4xl mb-4">
+        <div>
+          {/* <div className="mx-auto max-w-2xl lg:max-w-4xl mb-4"> */}
           <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Unsere Sportangebote
           </h1>
