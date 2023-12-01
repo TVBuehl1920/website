@@ -3,16 +3,16 @@ import { graphql } from "gatsby"
 
 // import { Link } from "gatsby"
 // import { StaticImage } from "gatsby-plugin-image"
-
+import Container from "../components/base/Container"
 import Layout from "../components/base/layout"
 import { Seo } from "../components/base/seo"
-import Hero from "../components/hero/hero"
+// import Hero from "../components/hero/hero"
 import ContentSection from "../components/contentSection/contentSection"
 import Card from "../components/card/card"
 
 const IndexPage = ({ data }) => {
   const pageData = data && data.datoCmsHomepage
-  const hero = pageData.hero[0]
+  // const hero = pageData.hero[0]
   const contentSection1 = pageData.contentSection[0]
     ? pageData.contentSection[0]
     : null
@@ -21,11 +21,10 @@ const IndexPage = ({ data }) => {
     : null
   const sportangebote = pageData.sportangebote
 
-  console.log("contentSection1: ", contentSection1)
   return (
     <Layout>
-      <div className="bg-white">
-        {hero && hero?.image?.url && (
+      <Container>
+        {/* {hero && hero?.image?.url && (
           <Hero
             title={hero?.title}
             description={hero?.description}
@@ -33,7 +32,7 @@ const IndexPage = ({ data }) => {
             buttonText={hero?.buttonText}
             buttonLink={hero?.buttonLink}
           />
-        )}
+        )} */}
 
         {contentSection1 && (
           <ContentSection
@@ -53,14 +52,14 @@ const IndexPage = ({ data }) => {
             linkUrl={contentSection2.linkUrl}
           />
         )}
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-9 md:py-12">
+        <div className="mx-auto  py-9 md:py-12">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Unsere Sportangebote
             </h2>
-            <p className="mt-2 text-lg leading-8 text-gray-600">
+            {/* <p className="mt-2 text-lg leading-8 text-gray-600">
               Learn how to grow your business with our expert advice.
-            </p>
+            </p> */}
           </div>
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {sportangebote.map(item => (
@@ -86,7 +85,7 @@ const IndexPage = ({ data }) => {
                 dir melden. Wir freuen uns auf dich!"
           imageURL="https://www.datocms-assets.com/102609/1686771343-hero-turn.jpg"
         /> */}
-      </div>
+      </Container>
     </Layout>
   )
 }

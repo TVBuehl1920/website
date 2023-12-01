@@ -3,32 +3,26 @@ import { graphql } from "gatsby"
 import Layout from "../components/base/layout"
 import { Seo } from "../components/base/seo"
 import LazyImage from "../components/base/LazyImage"
-
+import Container from "../components/base/Container"
 const VorstandPage = ({ data }) => {
   const pageData = data && data.allDatoCmsVorstand.edges[0].node
   return (
     <Layout>
-      <div className="py-8 lg:py-32">
+      <Container>
         <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
-          <div className="mx-auto max-w-2xl">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Vorstandsteam
-            </h1>
-            <p className="mt-4 text-lg leading-8 text-gray-600">
-              We’re a dynamic group of individuals who are passionate about what
-              we do.
-            </p>
+          <div class="mx-auto max-w-2xl text-center">
+            <h1> Vorstandsteam</h1>
           </div>
           <ul
-            className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+            className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-4"
           >
             {pageData?.member?.map(person => (
-              <li key={person.name}>
+              <li key={person.name} >
                 {person.image?.url ? (
 
                   <LazyImage
                     classNames="object-cover mx-auto h-56 w-48 rounded-[42px]"
-                    aspectRatio={224/192}
+                    aspectRatio={224 / 192}
                     src={person.image.url}
                     alt={person.name}
                     width={192}
@@ -68,7 +62,7 @@ const VorstandPage = ({ data }) => {
           />)}
 
         </div>
-      </div>
+      </Container>
     </Layout>
   )
 }

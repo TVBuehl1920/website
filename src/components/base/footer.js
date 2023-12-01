@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link } from 'gatsby'
+import Container from "./Container"
 
 const aboutUs = [
   {
@@ -23,10 +24,11 @@ const aboutUs = [
 export default function Footer() {
   return (
     <footer className="bg-gray-900" aria-labelledby="footer-heading">
-      <div className="mx-auto max-w-7xl px-6 pb-8 pt-4 sm:pt-24 lg:px-8 lg:pt-8">
+      {/* <div className="mx-auto max-w-7xl px-6 pb-8 pt-4 sm:pt-24 lg:px-8 lg:pt-8"> */}
+      <Container>
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-         
-          <div className="mt-16 grid md:gap-8 xl:col-span-2 xl:mt-0">
+
+          <div className="mt-4 lg:mt-16 grid md:gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-3 md:gap-8">
               <div className="mt-10 md:mt-0">
                 <div>
@@ -106,7 +108,8 @@ export default function Footer() {
           </div>
           {/* </div> */}
         </div>
-      </div>
+        {/* </div> */}
+      </Container>
     </footer>
   )
 }

@@ -9,12 +9,16 @@ const TurnratPage = ({ data }) => {
 
   return (
     <Layout>
-      <Container prose>
-        {" "}
-        <div
-          className="mt-6 text-lg leading-8 text-gray-700 prose lg:prose-xl"
-          dangerouslySetInnerHTML={{ __html: pageData.content }}
-        />
+      <Container>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl text-center">
+            <h1> Unser Turnrat</h1>
+          </div>
+          <div
+            className="mt-6 text-lg leading-8 text-gray-700 prose lg:prose-xl"
+            dangerouslySetInnerHTML={{ __html: pageData.content }}
+          />
+        </div>
       </Container>
     </Layout>
   )

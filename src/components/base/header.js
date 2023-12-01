@@ -16,7 +16,7 @@ const aboutUs = [
     href: "/turnrat/",
   },
   {
-    name: "Übungsleiter",
+    name: "Übungsleiter/-innen",
     href: "/uebungsleiter/",
   },
   {
@@ -43,15 +43,15 @@ export default function Header() {
   return (
     <header className="bg-white">
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        className="flex pt-4 lg:pt-12 container mx-auto items-center justify-between "
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5" title="zur startseite">
             {/* <span className="sr-only">Turnverein Bühl</span> */}
             <StaticImage src="../../images/logo.jpg" className="h-auto w-auto" alt="" objectFit="cover" layout="fixed"
-               width={160}
-               height={54}  />
+              width={160}
+              height={54} />
 
             {/* <img
               className="h-8 w-auto"
@@ -67,13 +67,13 @@ export default function Header() {
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Menü öffnen</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            <Bars3Icon className="h-8 w-8" aria-hidden="true" />
           </button>
         </div>
-        <Popover.Group className="hidden lg:flex lg:gap-x-12">
+        <Popover.Group className="hidden lg:flex lg:gap-x-12 cursor-pointer">
           <Link
             to="/"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-sm font-semibold leading-6 text-gray-900 cursor-pointer"
           >
             Startseite
           </Link>

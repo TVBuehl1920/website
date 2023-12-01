@@ -9,10 +9,9 @@ const ContactPage = ({ data }) => {
 
   return (
     <Layout>
-      <Container prose>
-        {" "}
+      <Container>
         <div
-          className="mt-6 text-lg leading-8 text-gray-700 prose lg:prose-xl"
+          className="mt-6 text-lg leading-8 text-gray-700 prose md:prose-md lg:prose-lg "
           dangerouslySetInnerHTML={{ __html: pageData.content }}
         />
       </Container>

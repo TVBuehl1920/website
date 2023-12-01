@@ -11,31 +11,30 @@ const SportangebotePage = () => {
   return (
     <Layout>
       <Container>
-        <div>
-          {/* <div className="mx-auto max-w-2xl lg:max-w-4xl mb-4"> */}
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Unsere Sportangebote
-          </h1>
-          <p className="mt-2 text-lg leading-8 text-gray-600">
+        <div class="mx-auto max-w-2xl text-center">
+          <h1>  Unsere Sportangebote</h1>
+          <p class="mt-6 text-md lg:text-lg leading-6 lg:leading-8 text-gray-600">
             Unser Angebot umfasst eine Vielzahl an unterschiedlichen Sportarten
             für alle Altersklassen. Von Kinderturnen über klassisches
             Gerätturnen bis hin zu unserem umfangreichen Gymwelt-Angebot bieten
             wir alles um dich maximal fit zu halten. Aber schau doch einfach mal
             vorbei! Wir freuen uns auf dich!
           </p>
-          <div className="mt-16 space-y-20 lg:mt-20 lg:space-y-20">
-            {sportProgram?.map(item => (
-              <SportangebotCard
-                key={item.title}
-                id={item.id}
-                previewImage={item.previewImage}
-                slug={item.slug}
-                title={item.title}
-                previewText={item.previewText}
-              />
-            ))}
-          </div>
         </div>
+       
+        <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+          {sportProgram?.map(item => (
+            <SportangebotCard
+              key={item.title}
+              id={item.id}
+              previewImage={item.previewImage}
+              slug={item.slug}
+              title={item.title}
+              previewText={item.previewText}
+            />
+          ))}
+        </div>
+
       </Container>
     </Layout>
   )

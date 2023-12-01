@@ -4,7 +4,7 @@ export const GetAllNews = () => {
 
   const { allDatoCmsNews } = useStaticQuery(graphql`
     query newsQuery {
-      allDatoCmsNews {
+      allDatoCmsNews(sort: {meta: {publishedAt: DESC}}) {
         edges {
           node {
             id

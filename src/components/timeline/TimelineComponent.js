@@ -12,20 +12,8 @@ function TimelineComponent({ data }) {
   return (
     <section>
       <div className="py-8">
-        <div className="container mx-auto flex flex-col items-start md:flex-row ">
-          <div className="flex flex-col w-full sticky md:top-36 lg:w-1/3 ">
-            {/* <p className="ml-2 text-red-800 uppercase tracking-loose">
-              Geschichte
-            </p> */}
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-4">
-              Geschichte Turnverein 1920 Bühl e.V.
-            </h1>
-            <p className="md:text-base text-lg leading-8 text-gray-700 mb-4">
-              Here’s your guide to the tech fest 2021 process. Go through all
-              the steps to know the exact process of the fest.
-            </p>
-          </div>
-          <div className="ml-0 md:ml-12 lg:w-2/3 sticky">
+        <div className="mx-auto flex flex-col items-start md:flex-row ">
+          <div className="ml-0 md:ml-12">
             <div className="container mx-auto w-full h-full">
               <div className="relative wrap overflow-hidden p-1 md:p-10 h-full">
                 <div

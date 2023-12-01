@@ -34,16 +34,20 @@ const TrainingszeitenPage = () => {
     <Layout>
       <Container>
         {" "}
-        <div className="mx-auto max-w-2xl lg:mx-0 mb-4 lg:mb-6">
+        <div class="mx-auto max-w-2xl text-center mb-4">
+          <h1>   Trainingszeiten</h1>
+          <p class="mt-6 text-md lg:text-lg leading-6 lg:leading-8 text-gray-600">
+            Unser aktuelles Trainingsprogramm
+          </p>
+        </div>
+        {/* <div className="mb-4 lg:mb-6">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Trainingszeiten
           </h1>
           <p className="mt-2 text-lg leading-8 text-gray-600">
-            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-            lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-            fugiat aliqua.
+            Unser aktuelles Trainingsprogramm
           </p>
-        </div>
+        </div> */}
         <TrainingTable trainingszeiten={trainingszeiten} />
       </Container>
     </Layout>

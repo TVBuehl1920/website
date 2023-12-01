@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Link } from 'gatsby'
 import Layout from "../components/base/layout"
 import { Seo } from "../components/base/seo"
-
+import Container from "../components/base/Container"
 import { GetAllNews } from "../queries/news"
 
 const AktuellesPage = () => {
@@ -11,34 +11,26 @@ const AktuellesPage = () => {
   const [showMore, setShowMore] = useState(false)
   return (
     <Layout>
-      <div className="bg-white py-4 lg:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Aktuelles
-            </h1>
-            <p className="mt-2 text-lg leading-8 text-gray-600">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-              fugiat aliqua.
-            </p>
-          </div>
-          <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            <Hits hits={news} showMore={showMore} />
-          </div>
-          <div className="flex justify-content p-16 ">
-            <div className="mx-auto max-w-7xl">
-              <button
-                className="py-2 px-3 border border-gray-400 rounded-md w-full"
-                style={{ display: news.length < 3 ? "none" : "block" }}
-                onClick={() => setShowMore(!showMore)}
-              >
-                {showMore ? "WENIGER ANZEIGEN" : "ALLE ANZEIGEN"}
-              </button>
-            </div>
+      <Container>
+        <div class="mx-auto max-w-2xl text-center">
+          <h1> Aktuelles </h1>
+        </div>
+        <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          <Hits hits={news} showMore={showMore} />
+        </div>
+        <div className="flex justify-content p-16 ">
+          <div className="mx-auto max-w-7xl">
+            <button
+              className="py-2 px-3 border border-gray-400 rounded-md w-full"
+              style={{ display: news.length < 3 ? "none" : "block" }}
+              onClick={() => setShowMore(!showMore)}
+            >
+              {showMore ? "WENIGER ANZEIGEN" : "ALLE ANZEIGEN"}
+            </button>
           </div>
         </div>
-      </div>
+
+      </Container>
     </Layout>
   )
 }

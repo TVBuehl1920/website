@@ -3,10 +3,10 @@ import PropTypes from "prop-types"
 
 const Container = ({ children, prose }) => {
   return (
-    <div className="py-4 lg:py-24">
+    <div className="container mx-auto py-4 lg:py-12 lg:mb-5 px-4 lg:px-0 ">
       <div
         className={`${prose ? "prose md:prose-md lg:prose-xl " : ""
-          }mx-auto max-w-7xl px-6 lg:px-8`}
+          }`}
       >
         {children}
       </div>

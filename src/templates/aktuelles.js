@@ -7,27 +7,39 @@ export default function Aktuelles(props) {
   return (
     <Layout>
       <Container>
-      <div className="flex justify-between px-4 py-6 mx-auto max-w-screen-xl ">
-        {" "}
-        <article
-          className="mx-auto w-full max-w-2xl px-4 sm:px-6 xl:max-w-3xl xl:px-0 pt-10"
-          itemType="http://schema.org/Article"
-        >
-          <header className="mb-4 lg:mb-6">
-            <h1 className="max-w-2xl text-3xl font-bold tracking-tight text-gray-900 md:text-6xl lg:col-span-2 xl:col-auto sm:text-5xl">
-              {pageContext.title}
-            </h1>
-          </header>
-          <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
-            {" "}
-            <section
-            className="mt-6 text-lg leading-8 text-gray-700"
-              dangerouslySetInnerHTML={{ __html: pageContext.content }}
-              itemProp="articleBody"
-            />
+        <div className="mx-auto w-full max-w-7xl lg:px-8">
+          <div className="relative px-4 sm:px-8 lg:px-12">
+            <div className="mx-auto max-w-2xl lg:max-w-6xl">
+
+              <div className="xl:relative">
+                <div className="mx-auto max-w-4xl">
+                  <article
+                    className=" w-full "
+                    itemType="http://schema.org/Article"
+                  >
+                    <header className="mb-4 lg:mb-6">
+                      <h1 >
+                        {pageContext.title}
+                      </h1>
+                    </header>
+                    <div className="mx-auto max-w-4xl text-base leading-7 text-gray-700">
+                      {" "}
+                      <section
+                        className="mt-8 prose dark:prose-invert text-gray-700"
+                        dangerouslySetInnerHTML={{ __html: pageContext.content }}
+                        itemProp="articleBody"
+                      />
+                    </div>
+                  </article>
+                </div>
+
+              </div>
+            </div>
+
           </div>
-        </article>
-      </div>
+          {" "}
+
+        </div>
       </Container>
     </Layout>
   )
