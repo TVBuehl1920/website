@@ -14,14 +14,14 @@ const GeschichtePage = ({ data }) => {
     <Layout>
       <Container>
         <div class="mx-auto max-w-2xl text-center">
-          <h1>    Geschichte Turnverein 1920 Bühl e.V.</h1>
-
+          <h1>Geschichte Turnverein 1920 Bühl e.V.</h1>
         </div>
         <TimelineComponent data={timeline && timeline} />
-        <div
+        {pageData.content && (<div
           className="mt-6 text-lg leading-8 text-gray-700 prose lg:prose-xl"
           dangerouslySetInnerHTML={{ __html: pageData.content }}
-        />
+        />)}
+
       </Container>
     </Layout>
   )
