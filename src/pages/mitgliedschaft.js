@@ -9,9 +9,9 @@ const MembershipPage = ({ data }) => {
 
   return (
     <Layout>
-      <Container prose>
+      <Container>
         <div
-          className="mt-6 text-lg leading-8 text-gray-700"
+          className="mt-6 text-lg leading-8 text-gray-700 prose lg:prose-xl"
           dangerouslySetInnerHTML={{ __html: pageData.content }}
         />
       </Container>

@@ -62,7 +62,7 @@ const Hits = ({ hits, showMore }) => {
                     {node.title}
                   </Link>
                 </h3>
-                <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                <p className="mt-3 line-clamp-3 text-sm leading-6 text-gray-600">
                   {node.previewText}
                 </p>
               </div>

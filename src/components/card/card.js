@@ -24,7 +24,7 @@ export default function Card({ id, previewImage, slug, title, previewText }) {
               {title}
             </Link>
           </h3>
-          <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+          <p className="mt-3 line-clamp-3 text-sm leading-6 text-gray-600">
             {previewText}
           </p>
         </div>

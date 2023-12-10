@@ -31,7 +31,7 @@ export default function SportangebotCard({
               {title}
             </Link>
           </h2>
-          <p className="mt-5 text-sm leading-6 text-gray-600">{previewText}</p>
+          <p className="mt- lg:mt-2 text-sm leading-6 text-gray-600">{previewText}</p>
         </div>
       </div>
     </div>
