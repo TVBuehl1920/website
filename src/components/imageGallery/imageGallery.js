@@ -15,13 +15,14 @@ const ImageGallery = ({ imageArray }) => {
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 xl:gap-7 aspect-w-1 aspect-h-1">
+    <div className="flex flex-wrap content-center justify-center items-stretch gap-5 xl:gap-7 aspect-w-1 aspect-h-1 ">
+      {/* <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 xl:gap-7 aspect-w-1 aspect-h-1"> */}
       {imageGallery.map((image, index) => (
         <img
           key={index}
           alt=""
           src={image.url}
-          className="cursor-pointer object-cover w-full h-full"
+          className="cursor-pointer object-cover w-auto lg:h-[325px]"
           onClick={() => openModal(image.url)}
         />
       ))}
@@ -41,7 +42,6 @@ const ImageGallery = ({ imageArray }) => {
           <div className="relative z-10">
             <img
               src={modalImageUrl}
-              alt="Modal Image"
               className="mx-auto max-h-screen"
             />
           </div>
