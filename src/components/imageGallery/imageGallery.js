@@ -22,7 +22,7 @@ const ImageGallery = ({ imageArray }) => {
           key={index}
           alt=""
           src={image.url}
-          className="cursor-pointer object-cover w-auto lg:h-[325px]"
+          className="cursor-pointer object-cover w-auto h-auto lg:h-[325px]"
           onClick={() => openModal(image.url)}
         />
       ))}
