@@ -4,6 +4,7 @@ import Layout from "../components/base/layout"
 import { Seo } from "../components/base/seo"
 import LazyImage from "../components/base/LazyImage"
 import Container from "../components/base/Container"
+
 const VorstandPage = ({ data }) => {
   const pageData = data && data.allDatoCmsVorstand.edges[0].node
   return (
@@ -44,7 +45,18 @@ const VorstandPage = ({ data }) => {
                   ""
                 )}
                 <p className="text-base text-gray-600">{person.role}</p>
-                <p className="mt-4 text-base  text-gray-600">{person.tel}</p>
+                {person?.addressImage?.url ? (
+                  <div className="flex items-center justify-center mt-4">
+                    <img
+                      src={person?.addressImage?.url}
+                      alt={person.name ? person.name : "Turnverein Bühl 1920"}
+                      className="lazyload w-full "
+                      loading={'lazy'}
+                      decode="async"
+                    />
+                  </div>
+                ) : null}
+                {/* <p className="mt-4 text-base  text-gray-600">{person.tel}</p>
                 {person.email ? (
                   <a
                     href={`mailto:${person.email}`}
@@ -52,7 +64,7 @@ const VorstandPage = ({ data }) => {
                   >
                     {person.email}
                   </a>
-                ) : null}
+                ) : null} */}
               </li>
             ))}
           </ul>
@@ -91,6 +103,9 @@ export const query = graphql`
             }
             tel
             email
+            addressImage{
+              url
+            }
           }
         }
       }
