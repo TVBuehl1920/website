@@ -34,3 +34,7 @@ a {
   margin-bottom: 80px;
 }
 
+.underline{
+  text-decoration: underline;
+  margin-bottom: 6px;
+}
