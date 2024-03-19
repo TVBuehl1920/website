@@ -41,6 +41,7 @@ const IndexPage = ({ data }) => {
             imageURL={contentSection1.image.url}
             linkText={contentSection1.linkText}
             linkUrl={contentSection1.linkUrl}
+            isHero={true}
           />
         )}
         {contentSection2 && (
