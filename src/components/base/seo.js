@@ -39,6 +39,7 @@ export const Seo = ({
       {/* <meta name="twitter:url" content={seo.url} /> */}
       <meta name="twitter:description" content={metaDescription} />
       {children}
+      
     </>
   )
 }
