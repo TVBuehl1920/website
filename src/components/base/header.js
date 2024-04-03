@@ -16,6 +16,10 @@ const aboutUs = [
     href: "/turnrat/",
   },
   {
+    name: "Jugendvorstand",
+    href: "/jugendvorstand/",
+  },
+  {
     name: "Übungsleiter/-innen",
     href: "/uebungsleiter/",
   },
