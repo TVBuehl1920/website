@@ -1,7 +1,7 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
+import { Analytics } from "@vercel/analytics/react"
 import Navbar from "./header"
 import Footer from "./footer"
 
@@ -19,11 +19,12 @@ const Layout = ({ children }) => {
 
   return (
     <div className="container-fluid p-0">
+      <Analytics />
       <Navbar siteTitle={data.site.siteMetadata?.title || `Title`} />
       <main>
         {children}
       </main>
-      <Footer/>
+      <Footer />
     </div>
   )
 }
