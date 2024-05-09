@@ -16,6 +16,10 @@ const aboutUs = [
     href: "/uebungsleiter/",
   },
   {
+    name: "Jugendvorstand",
+    href: "/jugendvorstand/",
+  },
+  {
     name: "Geschichte",
     href: "/geschichte/",
   },
