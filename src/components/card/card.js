@@ -10,7 +10,7 @@ export default function Card({ id, previewImage, slug, title, previewText }) {
             <img
               src={previewImage?.url}
               alt=""
-              className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+              className="aspect-[3/2] w-full rounded-2xl bg-gray-100 object-cover lg:aspect-[3/2]"
             />
           )}
           <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
