@@ -105,11 +105,11 @@ export default function Header() {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-xs overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
-                <div className="p-4">
+              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-xl overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+                <div className="grid grid-cols-2 gap-x-2 p-4">
                   <div
                     key={"alle sportangebote"}
-                    className="group relative flex items-center gap-x-6  p-4 text-sm leading-6 hover:bg-gray-50 rounded-none border-inherit border-b-[1px] mb-5"
+                    className="col-span-2 group relative flex items-center gap-x-6  p-4 text-sm leading-6 hover:bg-gray-50 rounded-none border-inherit border-b-[1px] mb-5"
                   >
                     <div className="flex-auto">
                       <Link

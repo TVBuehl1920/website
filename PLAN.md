@@ -120,3 +120,24 @@ Erledigte Schritte, fehlgeschlagene Versuche, Protokollpfade unter `/tmp` und n�
 - Backup vor dieser Abschlussaktualisierung: `/tmp/turnverein-PLAN-before-final-verification-2026-10-21.md`. Keine Codeänderung durch den Plan-Worker.
 - Backup vor Ergänzung der gespeicherten Vercel-Einstellung: `/tmp/turnverein-PLAN-before-vercel-saved-2026-10-21.md`.
 - Backup vor Planabschluss: `/tmp/turnverein-PLAN-before-pr-completion-2026-10-21.md`. Hauptagent committet und pusht anschließend ausschließlich diesen Dokumentationsabschluss in den vorhandenen PR; dessen Commit-SHA ist hier noch nicht bekannt. Nächster Schritt danach: Review/Merge durch den Nutzer, kein automatisches Deployment. Die 98 Auditbefunde (darunter 51 hohe) bleiben separater Folgeumfang; „vollständig sicher“ wird nicht behauptet.
+
+
+## Task 2: Sportangebote-Navigation zweispaltig
+
+Scope: ausschließlich Desktop-Sportangebote-Dropdown auf zwei Spalten erweitern; „Alle Sportangebote“ steht darüber über die volle Breite. Über-uns-Popover und mobile einspaltige Disclosure bleiben unverändert. Keine neuen Abhängigkeiten oder Refactors. Backup vor Änderung: /tmp/turnverein-sportangebote-nav-Rum1LH.
+
+- [x] Desktop bei 1024 px und normalem Desktop-Viewport: zwei Spalten, vollständige lesbare CMS-Liste, Hauptlink volle Breite und keine Überläufe prüfen (Hauptagent).
+- [x] Mobil bei 390 px: bestehendes Menü und einspaltige Sportangebote-Disclosure prüfen (Hauptagent).
+- [x] Tastaturbedienung einschließlich Öffnen/Schließen/Links und echten Gatsby-Build prüfen (Hauptagent); Worker prüft JSX-Syntax mit vorhandenem Babel-Parser und git diff --check.
+
+Worker-Prüfstand: vorhandener @babel/parser akzeptiert header.js inklusive JSX (Exit 0), git diff --check Exit 0. Diff umfasst nur drei Klassenzeilen im ersten Sportangebote-Popover; keine eigenen Build-/Browserchecks ausgeführt. Die drei Prüfungen und das read-only Review sind durch den Hauptagenten abgeschlossen; die nachfolgenden Browserbelege stammen von ihm.
+
+- [x] Implementierung abgeschlossen: nur drei Klassenzeilen im Desktop-Sportangebote-Popover geändert (max-w-xl, Zweispalten-Grid, Hauptlink col-span-2).
+- [x] Hauptagent bestätigt echten Build mit Exit 0: /tmp/turnverein-nav-build-2026-10-21.log. Der Plan-Worker hat den Abschluss „Building static HTML ... 39/39“ und „Done building“ im Log selbst gelesen.
+- [x] Desktop laut Hauptagent: Panel vorher 320×997 px, danach 576×629 px mit zwei Spalten und 16 Links. Bei 1024×768 px liegt es links380/rechts956/unten728 und damit innerhalb des Viewports; bei 1920 px ebenfalls kein Überlauf. „Alle Sportangebote“ liegt über beide Spalten.
+- [x] Mobil laut Hauptagent: bei 390×844 px bleibt die Disclosure mit 16 Links einspaltig, Escape funktioniert; Viewport anschließend zurückgesetzt.
+- [x] Tastatur/Navigation laut Hauptagent: Escape schließt, Enter öffnet erneut; Tabfolge führt von „Alle Sportangebote“ zu „Eltern-Kind“ links und „Kleinkinder“ rechts. Link aus rechter Spalte erfolgreich geöffnet und Seite neu geladen. Ein zunächst mehrdeutiger Linklocator traf Menü- und Seiteninhalt; Hauptagent wählte anschließend die frische AX-ID. UI-Toolauswahlproblem, kein Codefehler.
+- [x] Frischer unabhängiger Reviewer laut Hauptagent: Spec PASS, Quality PASS, keine Findings; keine Reviewer-Codeänderung.
+- Screenshot: /Users/benprivat/.codex/visualizations/2026/10/21/01a15f24-e1e3-7ed0-9a97-fe21af223d9b/sportangebote-zwei-spalten.jpg.
+- Backup vor diesem reinen Planabschluss: /tmp/turnverein-nav-plan-completion-sWfOCw/PLAN.md. Keine Codeänderung durch diese Ergänzung; vorherige Task-1-Abschnitte unverändert.
+- Nächster Schritt: Hauptagent committet den geprüften Stand und öffnet unmittelbar den PR. Commit-SHA und PR-URL stehen noch aus und werden hier nicht erfunden; kein Deployment.
