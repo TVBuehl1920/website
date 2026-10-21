@@ -12,31 +12,42 @@ You can [sign up for a free account](https://dashboard.datocms.com/signup) and t
 
 ## Repo usage
 
-First, install the dependencies of this project:
+Use Node.js 24.22.1 (the version pinned in `.nvmrc`), then install the exact dependency tree from `package-lock.json`:
 
 ```
-yarn install
+nvm install
+nvm use
+npm ci
 ```
 
 Add an `.env` file containing the read-only API token of your DatoCMS site:
 
 ```
-echo 'DATO_API_TOKEN=abc123' >> .env
+DATO_CMS_API_TOKEN=your_read_only_token
+# DATO_ENVIRONMENT=your_environment # optional; defaults to the primary environment
 ```
 
 Then, to run this website in development mode (with live-reload):
 
 ```
-yarn develop
+npm run dev
 ```
 
 To build the final, production ready static website:
 
 ```
-yarn build
+npm run build
 ```
 
-The final result will be saved in the `public` directory.
+The final result will be saved in the `public` directory. The build reads real content from DatoCMS, so it requires a valid read-only token and network access. Keep `.env` local and out of Git.
+
+Tailwind stays on the latest 3.x release to preserve the existing CSS and PostCSS configuration. Upgrading to Tailwind 4 requires a separate CSS migration and visual verification.
+
+## Security updates
+
+Run `npm run test:security` after dependency changes. It uses a local HTTP server to check that the DatoCMS client’s request dependency still uploads text and files correctly and rejects multipart field-name header injection. No CMS credentials or test dependencies are needed.
+
+The scoped `request` overrides keep `form-data` on patched 2.5.6 and `qs` on 6.16.1. Other same-major overrides update Gatsby’s pinned Webpack, Immutable, Lodash, and Express route parser. These overrides need review when their parent packages are upgraded. `npm audit` still reports unresolved upstream dependencies in Gatsby and the legacy DatoCMS client; installing the newest direct versions does not resolve all inherited advisories.
 
 ## About
 
